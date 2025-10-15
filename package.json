@@ -1,0 +1,16 @@
+{
+  "name": "threads-stats",
+  "version": "1.0.0",
+  "description": "Real-time Threads post stats fetcher",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["threads", "puppeteer", "analytics"],
+  "author": "Yashwanth R",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "puppeteer": "^21.3.1"
+  }
+}
