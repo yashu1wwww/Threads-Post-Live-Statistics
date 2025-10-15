@@ -4,7 +4,7 @@
   "description": "Real-time Threads post stats fetcher",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node index.js"
   },
   "keywords": ["threads", "puppeteer", "analytics"],
   "author": "Yashwanth R",
