@@ -396,9 +396,13 @@ app.get("/fetch", async (req, res) => {
   }
 
   try {
-    const browser = await puppeteer.launch({ headless: true });
-    const page = await browser.newPage();
-    await page.goto(postUrl, { waitUntil: "networkidle2" });
+    const browser = await puppeteer.launch({
+  headless: true,
+  args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
+const page = await browser.newPage();
+await page.goto(postUrl, { waitUntil: "networkidle2", timeout: 30000 });
+
 
     const stats = await page.evaluate(() => {
       const likeCount = document.querySelector('svg[aria-label="Like"] + span');
@@ -424,4 +428,6 @@ app.get("/fetch", async (req, res) => {
 });
 
 
-app.listen(3000, () => console.log("Server running on http://localhost:3000"));
+const PORT = process.env.PORT || 3000; // Use Render's PORT or fallback to 3000 for local
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
