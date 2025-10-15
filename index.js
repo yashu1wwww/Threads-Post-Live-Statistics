@@ -308,7 +308,7 @@ app.get("/", (req, res) => {
 
         <div class="form-card">
           <form id="threadForm">
-            <input type="text" id="url" placeholder="https://www.threads.com/@username/post/POSTID" required>
+            <input type="text" id="url" placeholder="Enter Only Threads Post URL.." required>
             <button type="submit">Fetch Stats</button>
           </form>
         </div>
@@ -430,4 +430,5 @@ await page.goto(postUrl, { waitUntil: "networkidle2", timeout: 30000 });
 
 const PORT = process.env.PORT || 3000; // Use Render's PORT or fallback to 3000 for local
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
 
